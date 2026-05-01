@@ -30,9 +30,9 @@ https://kaedin-restaurant-filter.netlify.app/
 - Usage of classes for creating and storing menu items
 - Responsive design that avoids unnecessary media queries
 
-## Challenges & What I Learned
+## Challenges & Learning Opportunities
 
 - Managing UI state when filtering items
 - Avoiding layout shifts and visual jank during rendering
-- Understanding the difference between data-driven UI vs DOM manipulation
+- DOM manipulation and data-driven UI
 - Structuring code for readability and maintainability
