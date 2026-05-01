@@ -14,7 +14,10 @@
         <meta property="og:description" content="Order now to get your hands on some tasty bites!">
 
         <!-- Styles -->
-         <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/styles.css">
+
+        <!-- JavaScript -->
+        <script type="module" src="/main.js"></script>
     </head>
     <body>
         <header class="site-header">
@@ -76,32 +79,19 @@
                             <button type="button" aria-pressed="false" data-filter="lunch" class="filter-button">Lunch</button>
                         </li>
                         <li class="filter-list__item">
-                            <button type="button" aria-pressed="false" data-filter="drinks" class="filter-button">Drinks</button>
+                            <button type="button" aria-pressed="false" data-filter="dinner" class="filter-button">Dinner</button>
                         </li>
                         <li class="filter-list__item">
-                            <button type="button" aria-pressed="false" data-filter="desserts" class="filter-button">Desserts</button>
+                            <button type="button" aria-pressed="false" data-filter="dessert" class="filter-button">Desserts</button>
+                        </li>
+                        <li class="filter-list__item">
+                            <button type="button" aria-pressed="false" data-filter="drink" class="filter-button">Drinks</button>
                         </li>
                     </ul>
                 </header>
 
                 <!-- Menu items -->
                 <div class="menu__grid">
-                    <article class="menu-card">
-                        <img class="menu-card__image" src="/assets/veggie-burger.jpg" alt="A veggie burger with lettuce, pickles, onions, tomato, cheese and mayonnaise.">
-                        <div class="menu-card__info">
-                            <h3 class="menu-card__title"> Veggie Burger</h3>
-                            <p class="menu-card__description"> A delicious vegetable-based burger.</p>
-                            <p class="menu-card__price">$15.00</p>
-                        </div>
-                    </article>
-                    <div class="menu-card">
-                        <img class="menu-card__image" src="/assets/pancakes.jpg" alt="A stack of 3 pancakes with powdered sugar and fruit on top.">
-                        <div class="menu-card__info">
-                            <h3 class="menu-card__title"> Pancakes</h3>
-                            <p class="menu-card__description"> A fluffy stack of pancakes, topped with fruit and powdered sugar.</p>
-                            <p class="menu-card__price">$10.00</p>
-                        </div>
-                    </div>
                 </div>
             </section>
         </main>
