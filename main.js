@@ -167,16 +167,13 @@ const MENU_ITEMS = [
 
 const ANIMATION_DELAY = 120
 
-function generateCards(menuItemList) {
-    return menuItemList.map(item => item.toHTML())
-}
-
-function displayMenuItems(menuGrid, cards, stagger_placement) {
+function displayMenuItems(menuGrid, menuItems, stagger_placement) {
     menuGrid.innerHTML = "";
 
     if (stagger_placement) {
-        cards.forEach((card, index) => {
+        menuItems.forEach((item, index) => {
             setTimeout(() => {
+                const card = item.toHTML();
                 menuGrid.append(card);
 
                 requestAnimationFrame(() => {
@@ -185,18 +182,20 @@ function displayMenuItems(menuGrid, cards, stagger_placement) {
             }, ANIMATION_DELAY * index);
         });
     } else {
-        cards.forEach(card => {
+        menuItems.forEach(item => {
+            const card = item.toHTML();
+            card.classList.add(MENU_CARD_ANIMATION_CLASS)
             menuGrid.append(card);
         })
     }
 }
 
-function filterMenuItems(menuItems, filterKey, cards) {
-    const filtered = menuItems.filter(item => item.type === filterKey || filterKey === "all");
-    return filtered.map(item => cards[item.id - 1])
+function filterMenuItems(menuItems, filterKey) {
+    return menuItems.filter(item => item.type === filterKey || filterKey === "all");
 }
 
-function setUpButtons(menuGrid, cards) {
+// Sets up button state tracking.
+function setUpButtons(menuGrid) {
     const filterLists = document.getElementsByClassName(FILTER_LIST_CLASS)
     if (!filterLists || filterLists.length < 1) {
         console.error("Could not find the Filter List.");
@@ -236,8 +235,8 @@ function setUpButtons(menuGrid, cards) {
             active_category = category;
         }
 
-        const filtered_cards = filterMenuItems(MENU_ITEMS, active_category, cards);
-        displayMenuItems(menuGrid, filtered_cards, false);
+        const filtered_items = filterMenuItems(MENU_ITEMS, active_category);
+        displayMenuItems(menuGrid, filtered_items, false);
     })
 }
 
@@ -245,7 +244,6 @@ const menuGrid = document.getElementsByClassName(MENU_GRID_CLASS);
 if (!menuGrid || menuGrid.length < 1) {
     console.error("Could not find the Menu Grid.");
 } else {
-    const cards = generateCards(MENU_ITEMS)
-    displayMenuItems(menuGrid[0], cards, true);
-    setUpButtons(menuGrid[0], cards)
+    displayMenuItems(menuGrid[0], MENU_ITEMS, true);
+    setUpButtons(menuGrid[0]);
 }

@@ -155,6 +155,13 @@ body {
 }
 .menu__grid {
     display: grid;
+
+    /* 
+        This attempts to repeat as many columns as it can fit
+        minmax(20rem, max-content) will either make the column 20rem
+        wide OR as wide as the max content size of the item needs it to be
+        in order to fit.
+    */
     grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
     justify-content: center;
     align-items: center;
