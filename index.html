@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- Basic meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A practice website, restaurant themed.">
+        <meta name="keywords" content="Restaurant, Tasty, Food, Menu">
+        <title>Tasty Bites</title>
+
+        <!-- Open Graph tags -->
+        <meta property="og:title" content="Tasty Bites">
+        <meta property="og:description" content="Order now to get your hands on some tasty bites!">
+
+        <!-- Styles -->
+         <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+
+            <!-- 
+                We wrap all the site-header content so we can assign it a maximum width
+                while also being able to have auto-margin on the content-box.
+
+                site-header needs to span the whole document for the background color 
+                so it cannot have margin.
+              -->
+            <div class="site-header__content-box">
+                <div class="site-header__title-box site-header__flex-item">
+
+                    <!-- 
+                        This div is here so that the title-box can flex
+                        the title and description as one item instead of
+                        both seperately.
+                    -->
+                    <div class="site-title__group">
+                        <h1 class="site-title">Tasty Bites</h1>
+                        <p class="site-title__desc">Good food, Great mood.</p>
+                    </div>
+                </div>
+                <nav class="site-nav site-header__flex-item">
+                    <ul class="site-nav__list ">
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="/">Home</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="/">Menu</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="/">About</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="/">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="main">
+
+            <!-- Menu section -->
+            <section class="menu">
+                <header class="menu-header">
+                    <h2 class="menu-header__title">Our Menu</h2>
+
+                    <!-- Filter buttons -->
+                    <ul class="filter-list">
+                        <li class="filter-list__item">
+                            <button type="button" aria-pressed="true" data-filter="all" class="filter-button filter-button--active">All</button>
+                        </li>
+                        <li class="filter-list__item">
+                            <button type="button" aria-pressed="false" data-filter="breakfast" class="filter-button">Breakfast</button>
+                        </li>
+                        <li class="filter-list__item">
+                            <button type="button" aria-pressed="false" data-filter="lunch" class="filter-button">Lunch</button>
+                        </li>
+                        <li class="filter-list__item">
+                            <button type="button" aria-pressed="false" data-filter="drinks" class="filter-button">Drinks</button>
+                        </li>
+                        <li class="filter-list__item">
+                            <button type="button" aria-pressed="false" data-filter="desserts" class="filter-button">Desserts</button>
+                        </li>
+                    </ul>
+                </header>
+
+                <!-- Menu items -->
+                <div class="menu__grid">
+                    <article class="menu-card">
+                        <img class="menu-card__image" src="/assets/veggie-burger.jpg" alt="A veggie burger with lettuce, pickles, onions, tomato, cheese and mayonnaise.">
+                        <div class="menu-card__info">
+                            <h3 class="menu-card__title"> Veggie Burger</h3>
+                            <p class="menu-card__description"> A delicious vegetable-based burger.</p>
+                            <p class="menu-card__price">$15.00</p>
+                        </div>
+                    </article>
+                    <div class="menu-card">
+                        <img class="menu-card__image" src="/assets/pancakes.jpg" alt="A stack of 3 pancakes with powdered sugar and fruit on top.">
+                        <div class="menu-card__info">
+                            <h3 class="menu-card__title"> Pancakes</h3>
+                            <p class="menu-card__description"> A fluffy stack of pancakes, topped with fruit and powdered sugar.</p>
+                            <p class="menu-card__price">$10.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Created by Kaedin Wilken &copy;</p>
+        </footer>
+    </body>
+</html>
