@@ -26,9 +26,13 @@ https://kaedin-restaurant-filter.netlify.app/
 
 - Rendering UI from data (array -> DOM)
 - Event handling and delegation
-- State management for active filters
+- Filter state management
 - Usage of classes for creating and storing menu items
 - Responsive design that avoids unnecessary media queries
+
+## Improvements and Considerations
+- Mobile-first UI design
+- Multi-page layout
 
 ## Challenges & Learning Opportunities
 
